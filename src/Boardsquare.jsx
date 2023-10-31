@@ -4,8 +4,8 @@ import Piece from "./Piece";
 import { useDrop } from "react-dnd";
 import { handleMove } from "./Game";
 import { gameSubject } from "./Game";
-import Promote from "./Promotion";
-import Promotion from "./Promotion";
+import Promote from "./Promote";
+import Promotion from "./Promote";
 function BoardSquare({ piece, black, position }) {
   const [promotion, setPromotion] = useState(null);
   const [, drop] = useDrop({
@@ -29,7 +29,7 @@ function BoardSquare({ piece, black, position }) {
     <div className="board-square" ref={drop}>
       <Square black={black}>
         {promotion ? (
-          <Promotion />
+          <Promote promotion={promotion} />
         ) : piece ? (
           <Piece piece={piece} position={position} />
         ) : null}

@@ -33,6 +33,15 @@
   height: 50%;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.promote-square {
+  width: 50%;
+  height: 50%;
+}
+
 .square-black {
   background: #B59963
 }
