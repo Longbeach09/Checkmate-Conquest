@@ -1,5 +1,5 @@
 import React from "react";
-import Boardsquare from "./Boardsquare";
+import BoardSquare from "./BoardSquare";
 function Board({ board }) {
   function getXYPosition(i) {
     const x = i % 8;
@@ -19,7 +19,7 @@ function Board({ board }) {
     <div className="board">
       {board.flat().map((piece, i) => (
         <div key={i} className="square">
-          <Boardsquare
+          <BoardSquare
             piece={piece}
             black={isBlack(i)}
             position={getPosition(i)}
