@@ -1,8 +1,7 @@
 import express from "express";
 import morgan from "morgan";
-import session from "express-session";
+// import session from "express-session";
 import ViteExpress from "vite-express";
-
 const app = express();
 app.use(express.json());
 
@@ -12,8 +11,9 @@ app.use(express.static("public"));
 app.use(express.json());
 
 // import handler functions
-
+import handlerFunctions from "./controller.js";
 // Routes go here
+app.get("/users/:userId", handlerFunctions.getUser);
 
 // open a door to the server
 ViteExpress.listen(app, 7777, () =>
