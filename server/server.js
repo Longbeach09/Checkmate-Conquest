@@ -6,8 +6,18 @@ import ViteExpress from "vite-express";
 const app = express();
 app.use(express.json());
 
-app.listen("8000", () => {
-  console.log;
-});
+app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: false })); //helps with incription
+app.use(express.static("public"));
+app.use(express.json());
+
+// import handler functions
+
+// Routes go here
+
+// open a door to the server
+ViteExpress.listen(app, 7777, () =>
+  console.log(`if this shows up we've done it http://localhost:7777`)
+);
 
 // ViteExpress.listen(app, 5376, () => console.log("if this shows up your saved"));
