@@ -93,12 +93,8 @@ Move.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    UserId: {
+    userId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    timestamp: {
-      type: DataTypes.DATE,
       allowNull: false,
     },
   },
@@ -121,15 +117,6 @@ Move.belongsTo(Game, { foreignKey: "gameId" }); // Each move belongs to one game
 // sequelize.sync().then(() => {
 //   console.log("Database and tables have been created.");
 // });
-await db.sync({ force: true });
-
-await User.create({
-  username: "test user",
-  password: "asdf",
-  email: "g@g.com",
-});
-
-await db.close();
 
 // Export your models
 // module.exports = { Game, User, Move };
