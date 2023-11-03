@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Square from "./Square";
 import Piece from "./Piece";
 import { useDrop } from "react-dnd";
-import { handleMove } from "./Game";
-import { gameSubject } from "./Game";
+import { handleMove } from "../Game";
+import { gameSubject } from "../Game";
 import Promote from "./Promote";
 import Promotion from "./Promote";
 function BoardSquare({ piece, black, position }) {

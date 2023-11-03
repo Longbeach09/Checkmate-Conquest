@@ -13,7 +13,7 @@ function Piece({ piece: { type, color }, position }) {
   });
 
   useEffect(() => {
-    import(`./assets/${type}-${color}.png`)
+    import(`../assets/${type}-${color}.png`)
       .then((image) => {
         setPieceImg(image.default);
       })

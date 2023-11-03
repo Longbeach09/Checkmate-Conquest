@@ -1,6 +1,6 @@
 import React from "react";
 import Square from "./Square";
-import { move } from "./Game";
+import { move } from "../Game";
 
 const promotionPieces = ["r", "n", "b", "q"];
 const imagePath = (piece, color) => `./src/assets/${piece}-${color}.png`;

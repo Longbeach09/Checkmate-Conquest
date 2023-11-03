@@ -4,10 +4,28 @@ import App from "./App.jsx";
 import "./index.css";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import Home from "./Home.jsx";
+import ChessApp from "./ChessGame/ChessApp.jsx";
+import Navbar from "./Navbar.jsx";
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Navbar />}>
+      <Route index element={<Home />} />
+      <Route path="ChessApp" element={<ChessApp />} />
+    </Route>
+  )
+);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <DndProvider backend={HTML5Backend}>
-      <App />
+      <RouterProvider router={router} />
     </DndProvider>
   </React.StrictMode>
 );
