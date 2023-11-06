@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       <p>Home</p>
-      <button>Log in ?</button>
+
       <Outlet />
     </div>
   );

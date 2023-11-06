@@ -6,11 +6,11 @@ function CustomNavbar() {
     <div>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="/">Chess Conquest </Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <NavLink to="/">Home</NavLink>
               <NavLink to="/ChessApp">Chess App</NavLink>
+              <NavLink to="/Login">Login</NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
