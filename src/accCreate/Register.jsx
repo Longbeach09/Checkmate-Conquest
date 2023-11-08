@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Register = (props) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const [userName, setUserName] = useState("");
+  const [username, setUsername] = useState("");
   const redirect = useNavigate();
 
   const handleSubmit = (e) => {
@@ -14,12 +14,12 @@ const Register = (props) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="userName">User Name</label>
+        <label htmlFor="username">User Name</label>
         <input
-          value={userName}
-          onChange={(e) => setName(e.target.value)}
-          name="userName"
-          id="userName"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          name="username"
+          id="username"
           placeholder="User Name"
         />
         <label htmlFor="email">Email</label>

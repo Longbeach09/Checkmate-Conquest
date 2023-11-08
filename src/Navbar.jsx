@@ -15,7 +15,6 @@ function CustomNavbar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
       <main>
         <Outlet />
       </main>

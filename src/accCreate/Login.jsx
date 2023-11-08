@@ -3,24 +3,24 @@ import { Link, useNavigate } from "react-router-dom";
 // import Home from "./Home";
 // import Register from "./Register";
 const Login = (props) => {
-  //make async when you want to go back
-  // await axios
-  //   .post("/Login", { email, password })
-  //   .then((res) => {
-  //     dispatch({
-  //       type: "authenticated",
-  //       payload: res.data.userId,
-  //     });
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
   const redirect = useNavigate();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [pass, setPass] = useState("");
   const handleSubmit = (e) => {
+    //make async when you want to go back
+    // await axios
+    //   .post("/Login", { email, password })
+    //   .then((res) => {
+    //     dispatch({
+    //       type: "authenticated",
+    //       payload: res.data.userId,
+    //     });
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
     e.preventDefault();
-    console.log(email);
+    console.log(username);
     redirect("/");
   };
 
@@ -28,14 +28,13 @@ const Login = (props) => {
     <>
       <h2>Login Page</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="username">User Name</label>
         <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          name="email"
-          placeholder="yourEmail@gmail.com"
-          id="email"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          name="username"
+          placeholder="your username"
+          id="username"
         />
         <label htmlFor="password">Password</label>
         <input
