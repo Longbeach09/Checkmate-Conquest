@@ -10,7 +10,7 @@ function CustomNavbar() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <NavLink to="/ChessApp">Chess App</NavLink>
-              <NavLink to="/Login">Login</NavLink>
+              <NavLink to="/loginDisplay">Login</NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>

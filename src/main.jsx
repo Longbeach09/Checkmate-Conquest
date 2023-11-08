@@ -13,14 +13,15 @@ import {
 import Home from "./Home.jsx";
 import ChessApp from "./ChessGame/ChessApp.jsx";
 import Navbar from "./Navbar.jsx";
-import Login from "./Login.jsx";
+// import Login from "./accCreate/Login.jsx";
+import LoginDisplay from "./accCreate/LoginDisplay.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Navbar />}>
       <Route index element={<Home />} />
       <Route path="ChessApp" element={<ChessApp />} />
-      <Route path="Login" element={<Login />} />
+      <Route path="loginDisplay" element={<LoginDisplay />} />
     </Route>
   )
 );
