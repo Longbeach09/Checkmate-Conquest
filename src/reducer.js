@@ -1,20 +1,25 @@
 const initialState = {
-  user: [
-    { user_id: "1", username: "test user", password: "asdf", email: "g@g.com" },
-  ],
+  isAuthenticated: false,
+  userId: null,
+  //   user: [
+  //     { user_id: "1", username: "test user", password: "asdf", email: "g@g.com" },
+  //   ],
 };
 
-const userReducer = (state = initialState, action) => {
-  return state;
+const authReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "authenticated":
+      return {
+        ...state,
+        isAuthenticated: true,
+        userId: action.payload,
+      };
+
+    // Add other cases for different action types if needed
+
+    default:
+      return state;
+  }
 };
 
-// export default function reducer(action, state = initialState) {
-//   switch (action.type) {
-//     case "increment":
-
-//     default:
-//       return state; // return the existing state unchanged
-//   }
-// }
-
-export default userReducer;
+export default authReducer;

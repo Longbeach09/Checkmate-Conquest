@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-// import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { Connect } from "react-redux";
 // import Home from "./Home";
 // import Register from "./Register";
@@ -9,18 +9,19 @@ const Login = (props) => {
   // const redirect = useNavigate();
   const [username, setUsername] = useState("");
   const [pass, setPass] = useState("");
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const userId = useSelector((state) => state.userId);
 
-  const handleSubmit = (e) => {
-    // make async when you want to go back
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("login press");
-    axios
+    await axios
       .post("/Login", {
         username: username,
         password: pass,
       })
       .then((res) => {
+        console.log(res.data);
         dispatch({
           type: "authenticated",
           payload: res.data.userId,
@@ -36,6 +37,7 @@ const Login = (props) => {
   return (
     <>
       <h2>Login Page</h2>
+      userId: {userId ? userId : "None"}
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">User Name</label>
         <input

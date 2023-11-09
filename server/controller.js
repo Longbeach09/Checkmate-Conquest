@@ -1,4 +1,5 @@
 import { User, db } from "./model.js";
+import session from "express-session";
 
 // Define your handler function
 const handlerFunctions = {
