@@ -23,6 +23,7 @@ import handlerFunctions from "./controller.js";
 // Routes go here
 app.get("/users/:userId", handlerFunctions.getUser);
 app.post("/Login", handlerFunctions.login);
+app.post("/Register", handlerFunctions.register);
 ViteExpress.listen(app, 7777, () =>
   // open a door to the server
   console.log(`if this shows up we've done it http://localhost:7777`)

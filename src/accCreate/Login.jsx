@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-// import { Connect } from "react-redux";
-// import Home from "./Home";
-// import Register from "./Register";
+
 const Login = (props) => {
   // const redirect = useNavigate();
   const [username, setUsername] = useState("");
@@ -21,7 +19,7 @@ const Login = (props) => {
         password: pass,
       })
       .then((res) => {
-        console.log(res.data);
+        alert(res.data);
         dispatch({
           type: "authenticated",
           payload: res.data.userId,

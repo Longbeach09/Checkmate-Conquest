@@ -1,15 +1,36 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+
 const Register = (props) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [username, setUsername] = useState("");
   const redirect = useNavigate();
+  const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("login press");
+    await axios
+      .post("/Register", {
+        username: username,
+        password: pass,
+        email: email,
+      })
+      .then((res) => {
+        console.log(res.data);
+        dispatch({
+          type: "authenticated",
+          payload: res.data.userId,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     console.log(email);
-    redirect("/");
+    // redirect("/");
   };
   return (
     <>

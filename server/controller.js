@@ -39,6 +39,24 @@ const handlerFunctions = {
       userId: user.userId,
     });
   },
+  register: async (req, res) => {
+    const { username, password, email } = req.body;
+
+    console.log(req.body);
+
+    const newUser = await User.create({
+      username: username,
+      password: password,
+      email: email,
+    });
+
+    req.session.user = newUser;
+
+    res.send({
+      message: "account created ",
+      userId: newUser.userId,
+    });
+  },
 };
 
 export default handlerFunctions;
