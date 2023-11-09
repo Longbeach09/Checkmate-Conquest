@@ -15,9 +15,9 @@ app.use(express.json());
 import handlerFunctions from "./controller.js";
 // Routes go here
 app.get("/users/:userId", handlerFunctions.getUser);
-// app.post("");
-// open a door to the server
+app.post("/Login", handlerFunctions.login);
 ViteExpress.listen(app, 7777, () =>
+  // open a door to the server
   console.log(`if this shows up we've done it http://localhost:7777`)
 );
 

@@ -1,27 +1,36 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+// import { useDispatch } from "react-redux";
+// import { Connect } from "react-redux";
 // import Home from "./Home";
 // import Register from "./Register";
 const Login = (props) => {
-  const redirect = useNavigate();
+  // const redirect = useNavigate();
   const [username, setUsername] = useState("");
   const [pass, setPass] = useState("");
+  // const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
-    //make async when you want to go back
-    // await axios
-    //   .post("/Login", { email, password })
-    //   .then((res) => {
-    //     dispatch({
-    //       type: "authenticated",
-    //       payload: res.data.userId,
-    //     });
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+    // make async when you want to go back
     e.preventDefault();
+    console.log("login press");
+    axios
+      .post("/Login", {
+        username: username,
+        password: pass,
+      })
+      .then((res) => {
+        dispatch({
+          type: "authenticated",
+          payload: res.data.userId,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     console.log(username);
-    redirect("/");
+    // redirect("/");
   };
 
   return (

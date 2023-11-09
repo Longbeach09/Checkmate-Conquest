@@ -15,7 +15,9 @@ import ChessApp from "./ChessGame/ChessApp.jsx";
 import Navbar from "./Navbar.jsx";
 // import Login from "./accCreate/Login.jsx";
 import LoginDisplay from "./accCreate/LoginDisplay.jsx";
-
+// import { Provider } from "react-redux";
+// import { createStore } from "redux";
+// import userReducer from "./reducer.js";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Navbar />}>
@@ -26,10 +28,14 @@ const router = createBrowserRouter(
   )
 );
 
+// const store = createStore(userReducer);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    {/* <Provider store={store}> */}
     <DndProvider backend={HTML5Backend}>
       <RouterProvider router={router} />
     </DndProvider>
+    {/* </Provider> */}
   </React.StrictMode>
 );

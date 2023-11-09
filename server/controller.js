@@ -6,46 +6,38 @@ const handlerFunctions = {
     const user = await User.findByPk(req.params.userId);
     res.send(user);
   },
-  // login: async (req, res) => {
-  //   const { username, password } = req.body;
+  login: async (req, res) => {
+    const { username, password } = req.body;
 
-  //   // console.log(req.body)
+    console.log(req.body);
 
-  //   const user = await User.findOne({
-  //     where: {
-  //       username: username,
-  //     },
-  //     include: [
-  //       {
-  //         model: Rating,
-  //       },
-  //       {
-  //         model: Item,
-  //       },
-  //     ],
-  //   });
+    const user = await User.findOne({
+      where: {
+        username: username,
+      },
+    });
 
-  //   if (!user) {
-  //     res.json("No username found");
-  //     return;
-  //   }
+    if (!user) {
+      res.send("No username found");
+      return;
+    }
 
-  //   const authenticated = bcryptjs.compareSync(password, user.password);
+    const authenticated = password === user.password;
 
-  //   if (!authenticated) {
-  //     res.json("Password incorrect");
-  //     return;
-  //   }
+    if (!authenticated) {
+      res.send("Password incorrect");
+      return;
+    }
 
-  //   req.session.user = user;
+    req.session.user = user;
 
-  //   // console.log(req.session.user)
+    // console.log(req.session.user)
 
-  //   res.json({
-  //     message: "Login successful",
-  //     userId: user.userId,
-  //   });
-  // },
+    res.send({
+      message: "Login successful",
+      userId: user.userId,
+    });
+  },
 };
 
 export default handlerFunctions;
