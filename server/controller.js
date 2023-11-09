@@ -19,14 +19,14 @@ const handlerFunctions = {
     });
 
     if (!user) {
-      res.send("No username found");
+      res.send({ message: "No username found" });
       return;
     }
 
     const authenticated = password === user.password;
 
     if (!authenticated) {
-      res.send("Password incorrect");
+      res.send({ message: "Password incorrect" });
       return;
     }
 
@@ -44,6 +44,16 @@ const handlerFunctions = {
 
     console.log(req.body);
 
+    const user = await User.findOne({
+      where: {
+        username: username,
+      },
+    });
+    if (user) {
+      res.send({ message: "username was taken sucks to suck" });
+      return;
+    }
+
     const newUser = await User.create({
       username: username,
       password: password,
@@ -53,7 +63,7 @@ const handlerFunctions = {
     req.session.user = newUser;
 
     res.send({
-      message: "account created ",
+      message: "account created",
       userId: newUser.userId,
     });
   },

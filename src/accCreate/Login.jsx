@@ -19,11 +19,22 @@ const Login = (props) => {
         password: pass,
       })
       .then((res) => {
-        alert(res.data);
-        dispatch({
-          type: "authenticated",
-          payload: res.data.userId,
-        });
+        switch (res.data.message) {
+          case "No username found":
+            alert(res.data.message);
+            break;
+          case "Password incorrect":
+            alert(res.data.message);
+            break;
+          case "Login successful":
+            dispatch({
+              type: "authenticated",
+              payload: res.data.userId,
+            });
+            break;
+          default:
+            alert("problem");
+        }
       })
       .catch((err) => {
         console.log(err);

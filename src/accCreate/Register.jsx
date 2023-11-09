@@ -21,10 +21,23 @@ const Register = (props) => {
       })
       .then((res) => {
         console.log(res.data);
-        dispatch({
-          type: "authenticated",
-          payload: res.data.userId,
-        });
+        switch (res.data.message) {
+          case "username was taken sucks to suck":
+            alert(res.data.message);
+            break;
+          case "account created":
+            dispatch({
+              type: "authenticated",
+              payload: res.data.userId,
+            });
+            break;
+          default:
+            alert("problem");
+        }
+        // dispatch({
+        //   type: "authenticated",
+        //   payload: res.data.userId,
+        // });
       })
       .catch((err) => {
         console.log(err);
@@ -61,13 +74,7 @@ const Register = (props) => {
           placeholder="**********"
           id="password"
         />
-        {/* <div>
-          <a href="localhost:7777/"> */}
-        {/* <Link to="/Home"> */}
         <button type="submit">Log In</button>
-        {/* </Link> */}
-        {/* </a>
-        </div> */}
       </form>
       <button onClick={() => props.onFormSwitch("login")}>
         Already have a account? Login here{" "}
