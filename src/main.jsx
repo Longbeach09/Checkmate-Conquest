@@ -18,6 +18,7 @@ import LoginDisplay from "./accCreate/LoginDisplay.jsx";
 import { Provider } from "react-redux";
 // import { createStore } from "redux";
 // import authReducer from "./reducer.js";
+import Logout from "./accCreate/Logout.jsx";
 import store from "./store.js";
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="ChessApp" element={<ChessApp />} />
       <Route path="loginDisplay" element={<LoginDisplay />} />
+      <Route path="logout" element={<Logout />} />
     </Route>
   )
 );

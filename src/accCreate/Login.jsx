@@ -4,11 +4,11 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 
 const Login = (props) => {
-  // const redirect = useNavigate();
+  const redirect = useNavigate();
   const [username, setUsername] = useState("");
   const [pass, setPass] = useState("");
   const dispatch = useDispatch();
-  const userId = useSelector((state) => state.userId);
+  const uName = useSelector((state) => state.username);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,8 +29,9 @@ const Login = (props) => {
           case "Login successful":
             dispatch({
               type: "authenticated",
-              payload: res.data.userId,
+              payload: res.data.username,
             });
+            redirect("/");
             break;
           default:
             alert("problem");
@@ -46,7 +47,7 @@ const Login = (props) => {
   return (
     <>
       <h2>Login Page</h2>
-      userId: {userId ? userId : "None"}
+      {/* userId: {uName ? uName : "None"} */}
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">User Name</label>
         <input

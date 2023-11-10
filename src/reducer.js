@@ -1,6 +1,6 @@
 const initialState = {
   isAuthenticated: false,
-  userId: null,
+  username: null,
   //   user: [
   //     { user_id: "1", username: "test user", password: "asdf", email: "g@g.com" },
   //   ],
@@ -12,7 +12,7 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         isAuthenticated: true,
-        userId: action.payload,
+        username: action.payload,
       };
 
     // Add other cases for different action types if needed

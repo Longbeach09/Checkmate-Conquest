@@ -36,7 +36,7 @@ const handlerFunctions = {
 
     res.send({
       message: "Login successful",
-      userId: user.userId,
+      username: user.username,
     });
   },
   register: async (req, res) => {
