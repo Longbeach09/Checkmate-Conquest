@@ -20,9 +20,10 @@ import { Provider } from "react-redux";
 // import authReducer from "./reducer.js";
 import Logout from "./accCreate/Logout.jsx";
 import store from "./store.js";
+import { Error } from "./Error.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Navbar />}>
+    <Route path="/" element={<Navbar />} errorElement={<Error />}>
       <Route index element={<Home />} />
       <Route path="ChessApp" element={<ChessApp />} />
       <Route path="loginDisplay" element={<LoginDisplay />} />

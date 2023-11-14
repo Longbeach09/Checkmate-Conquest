@@ -10,7 +10,7 @@ function CustomNavbar() {
     <div>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="/">Chess Conquest </Navbar.Brand>
+          <NavLink to="/">Chess Conquest </NavLink>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <NavLink to="/ChessApp">Chess App</NavLink>

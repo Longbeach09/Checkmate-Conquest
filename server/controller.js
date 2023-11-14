@@ -67,6 +67,10 @@ const handlerFunctions = {
       userId: newUser.userId,
     });
   },
+  logout: async (req, res) => {
+    await req.session.destroy();
+    res.send("logged out");
+  },
 };
 
 export default handlerFunctions;
