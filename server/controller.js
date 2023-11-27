@@ -71,6 +71,38 @@ const handlerFunctions = {
     await req.session.destroy();
     res.send("logged out");
   },
+  getPlayers: async (req, res) => {
+    const { whitePlayer, blackPlayer } = req.body;
+
+    console.log(req.body);
+
+    const playerOne = await User.findOne({
+      where: {
+        username: whitePlayer,
+      },
+    });
+    if (!playerOne) {
+      res.send({ message: "not a valid user for white player" });
+      return;
+    }
+    const playerTwo = await User.findOne({
+      where: {
+        username: blackPlayer,
+      },
+    });
+    if (!playerTwo) {
+      res.send({ message: "not a valid user for black player" });
+      return;
+    }
+    req.session.playerOne = whitePlayer;
+    req.session.playerTwo = blackPlayer;
+
+    res.send({
+      message: "success have fun",
+      whitePlayer: playerOne.username,
+      blackPlayer: playerTwo.username,
+    });
+  },
 };
 
 export default handlerFunctions;

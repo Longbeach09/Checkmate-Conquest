@@ -13,7 +13,7 @@ function CustomNavbar() {
           <NavLink to="/">Chess Conquest </NavLink>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <NavLink to="/ChessApp">Chess App</NavLink>
+              <NavLink to="/ChessUsers">Play Chess</NavLink>
               {isAuthenticated ? (
                 // If authenticated, show Logout link
                 <NavLink to="/logout">
@@ -22,9 +22,10 @@ function CustomNavbar() {
                 </NavLink>
               ) : (
                 // If not authenticated, show Login link
-                <NavLink to="/loginDisplay">Login</NavLink>
+                <NavLink to="/loginDisplay">Login </NavLink>
               )}
               {/* <NavLink to="/loginDisplay">Login</NavLink> */}
+              <NavLink to="/chessApp"> working chess app </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>

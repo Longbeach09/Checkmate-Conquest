@@ -35,5 +35,5 @@ function Piece({ piece: { type, color }, position }) {
     </div>
   );
 }
-
+//this whole page is the individual peiceis
 export default Piece;

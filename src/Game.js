@@ -61,6 +61,8 @@ function updateGame(pendingPromotion) {
   };
   localStorage.setItem("savedGame", chess.fen());
   function getGameResult() {
+    // const playerOne = useSelector((state) => state.whitePlayer);
+    // const playerTwo = useSelector((state) => state.blackPlayer);
     if (chess.in_checkmate()) {
       const winner = chess.turn() === "w" ? "BLACK" : "WHITE";
       return `CHECKMATE - WINNER - ${winner}`;

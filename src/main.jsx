@@ -11,7 +11,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import Home from "./Home.jsx";
-import ChessApp from "./ChessGame/ChessApp.jsx";
+import ChessApp from "./ChessGame/ChessStarter.jsx";
 import Navbar from "./Navbar.jsx";
 // import Login from "./accCreate/Login.jsx";
 import LoginDisplay from "./accCreate/LoginDisplay.jsx";
@@ -21,6 +21,7 @@ import { Provider } from "react-redux";
 import Logout from "./accCreate/Logout.jsx";
 import store from "./store.js";
 import { Error } from "./Error.jsx";
+import ChessUsers from "./ChessGame/ChessUsers.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Navbar />} errorElement={<Error />}>
@@ -28,6 +29,8 @@ const router = createBrowserRouter(
       <Route path="ChessApp" element={<ChessApp />} />
       <Route path="loginDisplay" element={<LoginDisplay />} />
       <Route path="logout" element={<Logout />} />
+      <Route path="chessUsers" element={<ChessUsers />} />
+      {/* <Route path="actualChess" element={<ChessApp />} /> */}
     </Route>
   )
 );

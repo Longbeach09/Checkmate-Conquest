@@ -1,4 +1,4 @@
-import ChessApp from "./ChessGame/ChessApp"; // Replace with the correct path to ChessApp.js
+import ChessApp from "./ChessGame/ChessStarter"; // Replace with the correct path to ChessApp.js
 import "./App.css"; // Adjust the path to your CSS file if necessary
 import Home from "./Home";
 import { BrowserRouter } from "react-router-dom";

@@ -21,7 +21,7 @@ function BoardSquare({ piece, black, position }) {
       pendingPromotion && pendingPromotion.to == position
         ? setPromotion(pendingPromotion)
         : setPromotion(null)
-    );
+    ); // this is a ternerary for if a pawn is trying to pramote becausel if it was we would need to display a different piece
     return () => subscribe.unsubscribe();
   }, [position]);
 
@@ -37,5 +37,5 @@ function BoardSquare({ piece, black, position }) {
     </div>
   );
 }
-
+//this does all of the work for each individual piece
 export default BoardSquare;
