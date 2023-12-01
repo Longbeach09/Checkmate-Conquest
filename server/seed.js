@@ -14,19 +14,26 @@ await User.create({
   password: "asdf",
   email: "g@g.com",
 });
+await User.create({
+  username: "test user2",
+  password: "asdf",
+  email: "g@g.com",
+});
 
 await Game.create({
-  status: "complete",
+  gameState: "complete",
   winnerId: null,
-  startTime: new Date("2023-10-30T00:00:00"),
-  endTime: new Date("2023-10-30T00:30:00"),
+  // startTime: new Date("2023-10-30T00:00:00"),
+  // endTime: new Date("2023-10-30T00:30:00"),
+  whitePlayer: 1,
+  blackPlayer: 2,
 });
 
-await Move.create({
-  moveText: "Your move text here", // Fill in the actual move text.
-  moveNumber: 1, // Replace with the actual move number.
-  userId: 1, // Replace with the actual user ID.
-});
+// await Move.create({
+//   moveText: "Your move text here", // Fill in the actual move text.
+//   moveNumber: 1, // Replace with the actual move number.
+//   userId: 1, // Replace with the actual user ID.
+// });
 
 await db.close();
 console.log("Finished seeding database!");

@@ -1,6 +1,19 @@
 * {
   margin: 0;
   padding: 0;
+
+  
+}
+.navbar {
+  color: black;
+}
+.App {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .container {
@@ -9,11 +22,90 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(34, 34, 34);
+ 
 }
+
+.authFormContainer, .logOutForm {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+  align-items: center;
+  justify-content: center;
+  /* background-image: linear-gradient(79deg, #92419e, #f99cf9 48%, #e5a668); */
+  color: black;
+  /* padding: 5rem; */
+  /* border: 1px solid; */
+
+} 
+.homePage {
+  min-height: 100vh;
+  min-width: 100vw;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* display: flex; */
+  flex-direction: column;
+}
+
+.homeButton {
+  margin: 1rem;
+}
+
+.titleText {
+  color: black;
+  padding-top: 4rem;
+  
+}
+.welcomeText {
+  color: black;
+  margin: 3rem;
+}
+@media screen and(min-width: 600px){
+  
+}
+.loginForm, .registerForm, .userForm {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 0.5rem;
+}
+label {
+  text-align: left;
+  padding: 0.3rem 0;
+}
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+button {
+  border: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #e5a668;
+}
+.linkButton {
+  background: none;
+  color: black;
+  text-decoration: underline;
+
+}
+/* (79deg,#D99D55, #F2A950 30%,#fa4007fc)
+(79deg, #fcfced, #fcedfc 48%, #ebf6ff) */
 
 .board-container {
   width: 600px;
   height: 600px;
+  /* margin-left: 25%; */
+  /* margin-right: 10%; */
+  
 }
 
 .board {
@@ -21,6 +113,9 @@
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+
+
+
 }
 
 .square {
@@ -66,6 +161,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .piece {
@@ -85,7 +181,43 @@
   margin-top: 20px;
   cursor: pointer;
   background: rgb(63, 63, 63);
-  border: 2px solid white;
+  border: 2px solid black;
   border-radius: 10px;
 
+}
+
+.gameOverTxt {
+  width: 20vw;
+}
+
+.boardRow {
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.bg {
+  background-image: linear-gradient(79deg, #91429d, #f99cf9 48%, #e5a668);
+  color: black;
+  /* text-align: center; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* min-height: 100vh; */
+  /* min-width: 100vw; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+.navButt  {
+  color: black;
+  margin: 2rem;
+  font-size: large;
+
+}
+.bg a:hover {
+  color: rgba(215, 82, 34, 0.871);
+}
+
+.gameRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

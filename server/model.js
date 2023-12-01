@@ -52,19 +52,27 @@ Game.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    status: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     winnerId: {
       type: DataTypes.INTEGER,
+      defaultValue: null,
     },
-    startTime: {
-      type: DataTypes.DATE,
+    gameState: {
+      type: DataTypes.STRING,
     },
-    endTime: {
-      type: DataTypes.DATE,
+    whitePlayer: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
+    blackPlayer: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    //     startTime: {
+    //       type: DataTypes.DATE,
+    //     },
+    //     endTime: {
+    //       type: DataTypes.DATE,
+    //     },
   },
   {
     modelName: "game",

@@ -17,7 +17,7 @@ const ChessUsers = (props) => {
     e.preventDefault();
     console.log("submit Button pressed");
     await axios
-      .post("/getPlayers", {
+      .post("/game", {
         whitePlayer: whitePlayer,
         blackPlayer: blackPlayer,
       })
@@ -35,6 +35,7 @@ const ChessUsers = (props) => {
               payload: {
                 whitePlayer: res.data.whitePlayer,
                 blackPlayer: res.data.blackPlayer,
+                gameId: res.data.game.gameId,
               },
             }); //this was a axious request and i had to learn how to do switch cases but they make a lot more sense now
             // // console.log("success have fun");
@@ -47,10 +48,11 @@ const ChessUsers = (props) => {
   };
 
   return (
-    <>
-      <h2>Which two users are playing?</h2>
+    <div className="authFormContainer">
       {/* userId: {uName ? uName : "None"} */}
-      <form onSubmit={handleSubmit}>
+      <form className="userForm" onSubmit={handleSubmit}>
+        <h3>Which users are playing?</h3>
+
         <label htmlFor="username">White Player</label>
         <input
           value={whitePlayer}
@@ -70,7 +72,7 @@ const ChessUsers = (props) => {
         />
         <button type="submit">submit</button>
       </form>
-    </>
+    </div>
   );
 };
 

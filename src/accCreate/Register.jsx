@@ -30,6 +30,7 @@ const Register = (props) => {
               type: "authenticated",
               payload: res.data.userId,
             });
+            redirect("/");
             break;
           default:
             alert("problem");
@@ -46,8 +47,10 @@ const Register = (props) => {
     // redirect("/");
   };
   return (
-    <>
-      <form onSubmit={handleSubmit}>
+    <div className="authFormContainer">
+      <form className="registerForm" onSubmit={handleSubmit}>
+        <h2>Register</h2>
+
         <label htmlFor="username">User Name</label>
         <input
           value={username}
@@ -74,12 +77,15 @@ const Register = (props) => {
           placeholder="**********"
           id="password"
         />
-        <button type="submit">Log In</button>
+        <button type="submit">Register</button>
       </form>
-      <button onClick={() => props.onFormSwitch("login")}>
+      <button
+        className="linkButton"
+        onClick={() => props.onFormSwitch("login")}
+      >
         Already have a account? Login here{" "}
       </button>
-    </>
+    </div>
   );
 };
 

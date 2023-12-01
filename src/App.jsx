@@ -3,12 +3,14 @@ import "./App.css"; // Adjust the path to your CSS file if necessary
 import Home from "./Home";
 import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
+import { Navbar } from "react-bootstrap";
 // import { BrowserRouter, Route, Switch } from "react-router-dom";
-
+import CustomNavbar from "./Navbar.jsx";
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <CustomNavbar></CustomNavbar>
         <Home></Home>
         {/* <ChessApp /> */}
       </div>

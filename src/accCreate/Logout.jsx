@@ -23,7 +23,8 @@ const Logout = () => {
   };
 
   return (
-    <div>
+    <div className="logOutForm">
+      <h2>Are you sure you want to Log out</h2>
       <Button onClick={logoutHandler}>logout?</Button>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-
+import "../App.css";
 const Login = (props) => {
   const redirect = useNavigate();
   const [username, setUsername] = useState("");
@@ -45,11 +45,12 @@ const Login = (props) => {
   };
 
   return (
-    <>
-      <h2>Login Page</h2>
+    <div className="authFormContainer">
       {/* userId: {uName ? uName : "None"} */}
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">User Name</label>
+      <form className="loginForm" onSubmit={handleSubmit}>
+        <h2>Login</h2>
+
+        <label htmlFor="username">Username</label>
         <input
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -74,10 +75,13 @@ const Login = (props) => {
         {/* </a>
         </div> */}
       </form>
-      <button onClick={() => props.onFormSwitch("register")}>
+      <button
+        className="linkButton"
+        onClick={() => props.onFormSwitch("register")}
+      >
         Don't have a account? Register{" "}
       </button>
-    </>
+    </div>
   );
 };
 

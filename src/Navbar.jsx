@@ -7,25 +7,34 @@ function CustomNavbar() {
   // const [isAuthenticated, setIsAuthenticated] = useState(false);
   const isAuthenticated = useSelector((state) => state.isAuthenticated);
   return (
-    <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
-        <Container>
-          <NavLink to="/">Chess Conquest </NavLink>
+    <div className="bg">
+      <Navbar expand="lg" className="navbar">
+        <Container className="bg">
+          <NavLink to="/" className="navButt">
+            Checkmate Conquest{" "}
+          </NavLink>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <NavLink to="/ChessUsers">Play Chess</NavLink>
+              <NavLink to="/ChessUsers" className="navButt">
+                Play Chess
+              </NavLink>
               {isAuthenticated ? (
                 // If authenticated, show Logout link
-                <NavLink to="/logout">
+                <NavLink to="/logout" className="navButt">
                   {/* onClick={handleLogout} add in when finished*/}
                   Logout
                 </NavLink>
               ) : (
                 // If not authenticated, show Login link
-                <NavLink to="/loginDisplay">Login </NavLink>
+                <NavLink to="/loginDisplay" className="navButt">
+                  Login{" "}
+                </NavLink>
               )}
               {/* <NavLink to="/loginDisplay">Login</NavLink> */}
-              <NavLink to="/chessApp"> working chess app </NavLink>
+              <NavLink to="/chessApp" className="navButt">
+                {" "}
+                working chess app{" "}
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>

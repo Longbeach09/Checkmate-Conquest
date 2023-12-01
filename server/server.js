@@ -25,7 +25,12 @@ app.get("/users/:userId", handlerFunctions.getUser);
 app.post("/Login", handlerFunctions.login);
 app.post("/Register", handlerFunctions.register);
 app.get("/Logout", handlerFunctions.logout);
-app.post("/getPlayers", handlerFunctions.getPlayers);
+// app.post("/getPlayers", handlerFunctions.getPlayers);
+
+app.post("/game", handlerFunctions.createGame);
+app.get("/game", handlerFunctions.getGame);
+app.put("/game", handlerFunctions.saveGame);
+
 ViteExpress.listen(app, 7777, () =>
   // open a door to the server
   console.log(`if this shows up we've done it http://localhost:7777`)
